@@ -31,6 +31,9 @@ inference:
 	poetry run python src/pipelines/inference_pipeline.py
 
 
+debug:
+	poetry run python src/pipeline/dataflow.py --debug
+	
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
@@ -39,6 +42,12 @@ clean:
 ## Lint using flake8
 lint:
 	flake8 src
+
+github:
+	git init
+	git add .
+	git commit -m "Initital commit"
+
 
 
 #################################################################################

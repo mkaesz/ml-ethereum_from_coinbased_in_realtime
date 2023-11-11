@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Marc-Steffen Kaesz <mkaesz@msk.pub>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+bytewax = "^0.16.2"
+jupyter = "^1.0.0"
+numpy = "^1.26.1"
+hsfs = "^3.4.4"
+hopsworks = "^3.4.3"
+ta = "^0.11.0"
+ta-lib = "^0.4.28"
+setuptools = "^68.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
