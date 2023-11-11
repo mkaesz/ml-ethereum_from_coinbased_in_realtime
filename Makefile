@@ -20,15 +20,6 @@ init:
 features:
 	poetry run python src/pipelines/feature_pipeline.py
 
-# trains a new model and stores it in the model registry
-training:
-	poetry run python src/pipelines/training_pipeline.py
-
-# generates predictions and stores them in the feature store
-inference:
-	poetry run python src/pipelines/inference_pipeline.py
-
-
 debug:
 	poetry run python src/pipeline/dataflow.py --debug
 	
