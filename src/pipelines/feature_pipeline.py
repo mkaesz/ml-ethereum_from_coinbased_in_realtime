@@ -1,8 +1,8 @@
 from bytewax.connectors.stdio import StdOutput
 from bytewax.dataflow import Dataflow
 from bytewax.testing import run_main
-from src.data import config
 
+from src.data import config
 from src.data.flow_steps import (
     connect_to_input_socket,
     parse_string_to_dict,
@@ -13,9 +13,7 @@ from src.data.flow_steps import (
     tuple_to_dict,
     save_output_to_feature_store,
 )
-
 from argparse import ArgumentParser
-
 from src.data.logger import get_console_logger
 
 logger = get_console_logger()
