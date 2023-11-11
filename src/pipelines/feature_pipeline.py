@@ -2,7 +2,7 @@ from bytewax.connectors.stdio import StdOutput
 from bytewax.dataflow import Dataflow
 from bytewax.testing import run_main
 
-from src.data import config
+from src.helpers import config
 from src.data.flow_steps import (
     connect_to_input_socket,
     parse_string_to_dict,
@@ -14,7 +14,7 @@ from src.data.flow_steps import (
     save_output_to_feature_store,
 )
 from argparse import ArgumentParser
-from src.data.logger import get_console_logger
+from src.helpers.logger import get_console_logger
 
 logger = get_console_logger()
 
@@ -55,11 +55,11 @@ if __name__ == "__main__":
 
     if args.debug:
         logger.info('Running dataflow in debug mode')
-        data_flow.capture(StdOutput())
+        data_flow.output("out", StdOutput())
     else:
-        from src.data.config import FEATURE_GROUP_METADATA
-        data_flow.capture(StdOutput())
-        #save_output_to_feature_store(data_flow, FEATURE_GROUP_METADATA)
+        from src.helpers.config import FEATURE_GROUP_METADATA
+        #data_flow.output("out", StdOutput())
+        save_output_to_feature_store(data_flow, FEATURE_GROUP_METADATA)
 
     logger.info('Running dataflow')
     run_main(data_flow)

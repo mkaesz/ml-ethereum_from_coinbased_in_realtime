@@ -1,9 +1,9 @@
 import hsfs
 import hopsworks
 
-import src.data.config as config
+import src.helpers.config as config
 from src.data.types import FeatureGroupMetadata
-from src.data.logger import get_console_logger
+from src.helpers.logger import get_console_logger
 
 logger = get_console_logger()
 
@@ -50,7 +50,7 @@ def get_or_create_feature_view() -> hsfs.feature_view.FeatureView:
     feature_store = get_feature_store()
 
     # get pointer to the feature group
-    from src.data.config import FEATURE_GROUP_METADATA
+    from src.helpers.config import FEATURE_GROUP_METADATA
     feature_group = feature_store.get_feature_group(
         name=FEATURE_GROUP_METADATA.name,
         version=FEATURE_GROUP_METADATA.version

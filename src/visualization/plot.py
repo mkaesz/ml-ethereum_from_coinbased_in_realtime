@@ -1,13 +1,14 @@
 from datetime import timedelta
 
 import pandas as pd
-from bokeh.plotting import figure, Figure
+from bokeh.plotting import figure
+from mistune.directives import Figure
 
 
 def get_candlestick_plot(
     df: pd.DataFrame,
     window_seconds: int    
-) -> Figure:
+) -> figure:
     """Generates a candlestick plot using the provided data in `df_` and the
     Bokeh library
 
@@ -42,4 +43,5 @@ def get_candlestick_plot(
     p.vbar(df.date[inc], w, df.open[inc], df.close[inc], fill_color="#70bd40", line_color="black")
     p.vbar(df.date[dec], w, df.open[dec], df.close[dec], fill_color="#F2583E", line_color="black")
 
+    print(type(p))
     return p

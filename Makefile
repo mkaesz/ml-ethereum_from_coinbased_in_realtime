@@ -1,5 +1,3 @@
-.PHONY: clean data lint requirements sync_data_to_s3 sync_data_from_s3
-
 #################################################################################
 # GLOBALS                                                                       #
 #################################################################################
@@ -47,6 +45,9 @@ github:
 	git init
 	git add .
 	git commit -m "Initital commit"
+
+frontend:
+	poetry run streamlit run src/visualization/frontend.py
 
 
 

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "src"
 version = "0.1.0"
-description = ""
+description = "asd"
 authors = ["Marc-Steffen Kaesz <mkaesz@msk.pub>"]
 readme = "README.md"
 
@@ -15,8 +15,13 @@ hopsworks = "^3.4.3"
 ta = "^0.11.0"
 ta-lib = "^0.4.28"
 setuptools = "^68.2.2"
+streamlit = "^1.28.1"
+bokeh = "^3.3.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
